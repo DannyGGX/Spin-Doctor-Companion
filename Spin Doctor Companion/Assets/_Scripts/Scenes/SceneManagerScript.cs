@@ -1,21 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using UnityUtils;
 using Array = System.Array;
 
-public class SceneManagerScript : MonoBehaviour
+public class SceneManagerScript : PersistentSingleton<SceneManagerScript>
 {
-    public static SceneManagerScript Instance { get; private set; }
-
     [SerializeField] private ScenesSO scenes;
-
-    private void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(this);
-    }
 
     public void LoadScene(Scenes sceneName)
     {

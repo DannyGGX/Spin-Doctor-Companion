@@ -68,13 +68,13 @@ public class PauseMenu : MonoBehaviour
 
     private void RestartGame()
     {
-        SceneManagerScript.Instance.RestartCurrentScene();
+        //SceneManagerScript.Instance.RestartCurrentScene();
     }
 
     private void GoToMainMenu()
     {
         PauseManager.Instance.SetPauseState(false);
-        SceneManagerScript.Instance.LoadScene(Scenes.MainMenu);
+        //SceneManagerScript.Instance.LoadScene(Scenes.MainMenu);
     }
 
     private void QuitGame()

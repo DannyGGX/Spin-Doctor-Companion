@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TripleKD
+namespace SpinDoctorCompanion
 {
     
     public class LobbyDataSO : ScriptableObject

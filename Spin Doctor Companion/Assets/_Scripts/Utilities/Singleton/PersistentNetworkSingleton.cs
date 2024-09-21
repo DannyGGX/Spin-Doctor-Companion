@@ -3,7 +3,7 @@
 using Unity.Netcode;
 using UnityEngine;
 
-namespace TripleKD
+namespace SpinDoctorCompanion
 {
     public class PersistentNetworkSingleton<T> : NetworkBehaviour where T : Component {
         public bool AutoUnparentOnAwake = true;

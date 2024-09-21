@@ -46,7 +46,7 @@ public class MainMenu : MonoBehaviour
 
     private void StartGame()
     {
-        SceneManagerScript.Instance.LoadScene(Scenes.Level1);
+        //SceneManagerScript.Instance.LoadScene(Scenes.Level1);
     }
 
     private void GoToCredits()

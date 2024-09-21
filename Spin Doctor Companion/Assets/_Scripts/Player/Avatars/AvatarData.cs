@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TripleKD.Avatars
+namespace SpinDoctorCompanion.Avatars
 {
     [System.Serializable]
     public struct AvatarData

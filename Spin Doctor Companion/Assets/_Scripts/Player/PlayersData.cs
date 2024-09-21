@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine.Serialization;
 
-namespace TripleKD
+namespace SpinDoctorCompanion
 {
     /// <summary>
     /// Deprecated: PlayerManager has its own PlayersData list

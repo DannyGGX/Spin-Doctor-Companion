@@ -3,7 +3,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace TripleKD
+namespace SpinDoctorCompanion
 {
     
     public class PlayerManager : PersistentNetworkSingleton<PlayerManager>

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TripleKD.Avatars
+namespace SpinDoctorCompanion.Avatars
 {
     // Create 1 and access from Assets/Resources folder
     [CreateAssetMenu(fileName = "Avatars", menuName = "Scriptable Object/Avatars", order = 1)]

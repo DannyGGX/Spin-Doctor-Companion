@@ -32,11 +32,11 @@ namespace SpinDoctorCompanion._Scripts.Answer
             
             _answersText = new List<TextMeshProUGUI>();
             ClearAnswers();
-            ShowAnswersRPC();
+            ShowAnswersClientRPC();
         }
 
-        [Rpc(SendTo.Everyone)]
-        private void ShowAnswersRPC()
+        [ClientRpc]
+        private void ShowAnswersClientRPC()
         {
             Debug.Log("ShowAnswersRPC called");
             Answers answers = AnswerManager.Instance.GetAnswers();

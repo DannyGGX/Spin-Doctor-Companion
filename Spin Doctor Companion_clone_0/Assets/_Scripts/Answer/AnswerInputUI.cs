@@ -18,7 +18,7 @@ namespace SpinDoctorCompanion._Scripts.Answer
 
         private void SubmitAnswer()
         {
-            if (!IsOwner) return;
+            //if (!IsOwner) return;
             
             AnswerManager.Instance.GetAnswerFromInput(answerInput.text);
             

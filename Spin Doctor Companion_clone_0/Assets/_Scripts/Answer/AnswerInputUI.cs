@@ -21,6 +21,9 @@ namespace SpinDoctorCompanion._Scripts.Answer
             if (!IsOwner) return;
             
             AnswerManager.Instance.GetAnswerFromInput(answerInput.text);
+            
+            Debug.Log("SubmitAnswer called");
+            AnswerManager.Instance.PrintAnswers();
         }
     }
 }

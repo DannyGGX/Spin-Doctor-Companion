@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using Unity.Netcode;
+using UnityEngine;
 
 namespace SpinDoctorCompanion._Scripts.Answer
 {
@@ -36,6 +37,14 @@ namespace SpinDoctorCompanion._Scripts.Answer
         public Answers GetAnswers()
         {
             return answers;
+        }
+
+        public void PrintAnswers()
+        {
+            foreach (Answer answer in answers.answers)
+            {
+                Debug.Log(answer.answerText);
+            }
         }
     }
 }

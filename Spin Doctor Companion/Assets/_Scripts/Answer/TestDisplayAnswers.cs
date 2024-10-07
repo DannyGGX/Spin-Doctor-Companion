@@ -45,7 +45,7 @@ namespace SpinDoctorCompanion._Scripts.Answer
         }
         
         [ClientRpc]
-        private void ShowAnswersClientRpc(Answers answers)
+        public void ShowAnswersClientRpc(Answers answers)
         {
             Debug.Log("ShowAnswersRPC called");
             for (int i = 0; i < answers.answers.Count; i++)

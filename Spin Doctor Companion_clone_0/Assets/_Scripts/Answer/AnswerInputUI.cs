@@ -23,7 +23,6 @@ namespace SpinDoctorCompanion._Scripts.Answer
             AnswerManager.Instance.AddAnswerServerRpc(answerInput.text);
             
             Debug.Log("SubmitAnswer called");
-            AnswerManager.Instance.PrintAnswers();
         }
     }
 }

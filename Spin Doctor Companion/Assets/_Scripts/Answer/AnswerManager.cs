@@ -9,8 +9,22 @@ using UnityEngine;
 namespace SpinDoctorCompanion._Scripts.Answer
 {
     
-    public class AnswerManager : NetworkSingleton<AnswerManager>
+    public class AnswerManager : NetworkBehaviour
     {
+        public static AnswerManager Instance;
+        private void Awake()
+        {
+            // Add singleton code
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this);
+            }
+            else
+            {
+                Instance = this;
+            }
+        }
+
         private NetworkVariable<Answers> NetworkedAnswers = new NetworkVariable<Answers>(new Answers
         {
             answers = new List<Answer>()
@@ -26,6 +40,7 @@ namespace SpinDoctorCompanion._Scripts.Answer
         [ServerRpc(RequireOwnership = false)]
         public void AddAnswerServerRpc(string answer)
         {
+            Debug.Log("AddAnswerServerRpc executed on server");
             Answer answerStruct = new Answer();
             answerStruct.answerText = answer;
             NetworkedAnswers.Value.answers.Add(answerStruct);

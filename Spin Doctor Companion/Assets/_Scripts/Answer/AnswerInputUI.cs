@@ -20,7 +20,7 @@ namespace SpinDoctorCompanion._Scripts.Answer
         {
             //if (!IsOwner) return;
             
-            AnswerManager.Instance.GetAnswerFromInput(answerInput.text);
+            AnswerManager.Instance.AddAnswerServerRpc(answerInput.text);
             
             Debug.Log("SubmitAnswer called");
             AnswerManager.Instance.PrintAnswers();

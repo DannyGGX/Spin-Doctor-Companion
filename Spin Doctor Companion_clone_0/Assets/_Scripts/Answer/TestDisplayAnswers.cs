@@ -32,14 +32,22 @@ namespace SpinDoctorCompanion._Scripts.Answer
             
             _answersText = new List<TextMeshProUGUI>();
             ClearAnswers();
-            ShowAnswersClientRPC();
+            // Get the answers from the Answer Manager on the server and then show them on all clients
+            GetAndShowAnswersServerRpc();
         }
 
+        [ServerRpc(RequireOwnership = false)]
+        private void GetAndShowAnswersServerRpc()
+        {
+            Debug.Log("GetAnswersServerRPC called");
+            Answers currentAnswers = AnswerManager.Instance.GetAnswers();
+            ShowAnswersClientRpc(currentAnswers);
+        }
+        
         [ClientRpc]
-        private void ShowAnswersClientRPC()
+        private void ShowAnswersClientRpc(Answers answers)
         {
             Debug.Log("ShowAnswersRPC called");
-            Answers answers = AnswerManager.Instance.GetAnswers();
             for (int i = 0; i < answers.answers.Count; i++)
             {
                 CreateAnswerEntry(i, answers.answers[i]);

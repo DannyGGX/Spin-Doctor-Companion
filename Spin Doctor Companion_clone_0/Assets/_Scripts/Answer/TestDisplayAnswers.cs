@@ -31,7 +31,7 @@ namespace SpinDoctorCompanion._Scripts.Answer
             //if (!IsOwner) return;
             
             _answersText = new List<TextMeshProUGUI>();
-            ClearAnswers();
+            
             // Get the answers from the Answer Manager on the server and then show them on all clients
             GetAndShowAnswersServerRpc();
         }
@@ -44,10 +44,11 @@ namespace SpinDoctorCompanion._Scripts.Answer
             ShowAnswersClientRpc(currentAnswers);
         }
         
-        [ClientRpc]
+        [ClientRpc(RequireOwnership = false)]
         public void ShowAnswersClientRpc(Answers answers)
         {
             Debug.Log("ShowAnswersRPC called");
+            ClearAnswers(); // TODO: test that this works and that it is called only once on each client
             for (int i = 0; i < answers.answers.Count; i++)
             {
                 CreateAnswerEntry(i, answers.answers[i]);
